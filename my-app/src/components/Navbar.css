@@ -1,0 +1,116 @@
+.navbar {
+  width: 232px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 12px;
+  background: white;
+  border-right: 1px solid var(--border);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
+  z-index: 1; /* keeps the shadow on top of the gray page */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navbar-logo {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--text);
+  color: white;
+}
+
+.navbar-section {
+  padding: 16px 8px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  text-align: left;
+  color: #374151;
+}
+
+.navbar-link:hover {
+  background: #f4f5f7;
+}
+
+.navbar-link.active {
+  background: #e9eefc;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.navbar-count {
+  margin-left: auto;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--stage-color);
+  background: color-mix(in srgb, var(--stage-color) 12%, white);
+}
+
+.navbar-user {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 8px 4px;
+  border: none;
+  border-top: 1px solid var(--border);
+  background: none;
+  text-align: left;
+}
+
+.navbar-user strong {
+  display: block;
+  font-size: 13px;
+}
+
+.navbar-user small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.navbar-user:hover strong,
+.navbar-user.active strong {
+  color: var(--primary);
+}
+
+.navbar-avatar {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9eefc;
+  color: var(--primary);
+  font-weight: 600;
+}

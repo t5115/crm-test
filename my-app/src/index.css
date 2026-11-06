@@ -1,0 +1,194 @@
+/* Colours and fonts used across the app */
+:root {
+  --bg: #f4f5f7;
+  --border: #e6e8ec;
+  --text: #15171c;
+  --muted: #6b7280;
+  --primary: #2f5bd3;
+  --radius: 12px;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+button, input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  accent-color: var(--primary);
+}
+
+/* Layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 28px;
+}
+
+.page h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.page-eyebrow {
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* White box used for cards, widgets and popups */
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.widget {
+  padding: 16px;
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.widget-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.coming-soon {
+  margin-top: 20px;
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Buttons */
+.button-primary,
+.button-outline,
+.button-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.button-primary {
+  border: none;
+  background: var(--primary);
+  color: white;
+}
+
+.button-primary:hover {
+  background: #2549b0;
+}
+
+.button-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.button-outline {
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.button-outline:hover {
+  background: #f8f9fb;
+}
+
+.button-dark {
+  border: none;
+  background: var(--text);
+  color: white;
+}
+
+.link-button {
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.icon-button {
+  display: flex;
+  padding: 4px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  color: #b6bac3;
+}
+
+.icon-button:hover {
+  background: #f1f2f4;
+  color: var(--text);
+}
+
+/* Small grey label, e.g. "3 open" */
+.pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f1f2f4;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Forms */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafbfc;
+  font-weight: 400;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+}

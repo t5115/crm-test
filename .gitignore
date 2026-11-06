@@ -1,0 +1,11 @@
+# Personal / agent notes: keep all Markdown local except the root README
+*.md
+!/README.md
+.claude/
+
+# Dependencies, builds, local data
+node_modules/
+dist/
+.postgres-data/
+.env
+.env.*
