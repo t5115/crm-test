@@ -1,6 +1,17 @@
 // Small wrapper around fetch for talking to our API (server/index.js).
 // Vite forwards /api/* to the Express server, see vite.config.js.
+//
+// On the static GitHub Pages build there is no server, so requests go to the
+// in-browser mock API instead (src/api/mockScript.js). That happens when the
+// app is run or built with `--mode mock` (npm run dev:mock / build:mock).
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
+
 async function request(method, url, body) {
+  if (USE_MOCK) {
+    const { mockRequest } = await import('./mockScript.js')
+    return mockRequest(method, url, body)
+  }
+
   const response = await fetch(`/api${url}`, {
     method,
     headers: body ? { 'Content-Type': 'application/json' } : undefined,

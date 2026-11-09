@@ -23,8 +23,9 @@ jobs:
           cache: npm
           cache-dependency-path: my-app/package-lock.json
       - run: npm ci
-      # Project pages live at /<repo-name>/, so assets need that prefix
-      - run: npm run build -- --base=/${{ github.event.repository.name }}/
+      # Project pages live at /<repo-name>/, so assets need that prefix.
+      # There's no API server on Pages, so build:mock uses the in-browser mock data (src/api/mockScript.js).
+      - run: npm run build:mock -- --base=/${{ github.event.repository.name }}/
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
