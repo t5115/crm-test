@@ -1,6 +1,6 @@
 // A pretend API that runs in the browser, for the static GitHub Pages build.
 // GitHub Pages can't run our Express + Postgres server, so when the app is built
-// with `--mode mock` (see .env.mock), client.js sends requests here instead.
+// with `--mode mock` (npm run dev:mock / build:mock), client.js sends requests here instead.
 //
 // The data below mirrors server/db/seed.sql, and the route handlers mirror
 // server/routes/*.js. If you change the seed or a route, update this file too.

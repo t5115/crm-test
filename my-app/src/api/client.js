@@ -4,7 +4,7 @@
 // On the static GitHub Pages build there is no server, so requests go to the
 // in-browser mock API instead (src/api/mockScript.js). That happens when the
 // app is run or built with `--mode mock` (npm run dev:mock / build:mock).
-const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
+const USE_MOCK = import.meta.env.MODE === 'mock'
 
 async function request(method, url, body) {
   if (USE_MOCK) {
